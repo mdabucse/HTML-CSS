@@ -1,0 +1,125 @@
+/* Overall styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: bisque;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header styles */
+header {
+    background-color: gray;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    padding-right: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+}
+
+/* Responsive header */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    section {
+        margin-top: 90px;
+        scroll-margin-top: 90px;
+    }
+}
+
+/* Main Layout */
+main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    padding: 100px;
+}
+
+.sidebar {
+    background-color: #ddd;
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: 10px;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+}
+
+.content {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlapping Content */
+.overlap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 0, 0, 0.568);
+    color:white;
+    padding: 10px;
+    border: 1px solid red;
+    z-index: 10;
+}
+
+/* Footer styles */
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        padding: 50px;
+    }
+    .overlap {
+        position: static;
+        margin-top: 20px;
+    }
+}
