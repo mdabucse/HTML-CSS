@@ -1,0 +1,108 @@
+/* Overall styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: bisque;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: gray;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding-right: 30px;
+}
+
+nav ul li {
+    display: inline;
+    padding-right: 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+    cursor: pointer;
+}
+
+/* Main Styles */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.page {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 800px;
+}
+
+.page:target {
+    display: block;
+    animation: flipper 0.5s ease-in-out;
+    opacity: 1;
+}
+
+/* Footer styles */
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    margin-top: 10px;
+    padding: 5px 0 15px 0;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+@keyframes flipper {
+    0% {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
